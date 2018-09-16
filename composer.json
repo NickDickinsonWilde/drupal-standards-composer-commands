@@ -1,0 +1,27 @@
+{
+    "name": "nickwilde1990/drupal-standards-composer-commands",
+    "description": "Provides composer commands for standards checks on your Drupal project",
+    "type": "composer-plugin",
+    "require": {
+        "squizlabs/php_codesniffer": "2.9.x-dev",
+        "drupal/coder": "^8.2.12",
+        "dealerdirect/phpcodesniffer-composer-installer": "dev-master",
+        "composer-plugin-api": "^1.1"
+    },
+    "license": "GPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "Nick Wilde",
+            "email": "nick@briarmoon.ca"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "NickWilde1990\\DrupalStandardsCommands\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "extra": {
+        "class": "NickWilde1990\\DrupalStandardsCommands\\ComposerPlugin"
+    }
+}
