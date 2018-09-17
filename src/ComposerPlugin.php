@@ -1,6 +1,6 @@
 <?php
 
-namespace NickWilde1990\DrupalStandardsRunner;
+namespace NickWilde1990\DrupalStandardsCommands;
 
 use Composer\Composer;
 use Composer\IO\IOInterface;

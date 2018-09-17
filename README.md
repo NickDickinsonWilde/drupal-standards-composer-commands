@@ -43,7 +43,9 @@ need to run any command provided by this in your project root (same location as
 your `composer.json`).
 
 ### Available Commands
-* `drupal-phpcs`: Runs PHPCS on your code.
+* `drupal-phpcs`: Runs PHPCS on your code (checks PHP standards).
+* `drupal-phpcbf`: Runs PHPCBF on your code (automatically fixes many PHP
+  standards issues).
 
 ## Known issues
 

@@ -9,7 +9,8 @@ class Commands implements CommandProvider
     public function getCommands()
     {
         return [
-            new DrupalPhpcsRunner()
+            new DrupalPhpcsRunner(),
+            new DrupalPhpcbfRunner()
         ];
     }
 }
