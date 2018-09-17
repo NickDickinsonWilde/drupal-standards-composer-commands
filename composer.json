@@ -6,7 +6,8 @@
         "squizlabs/php_codesniffer": "2.9.x-dev",
         "drupal/coder": "^8.2.12",
         "dealerdirect/phpcodesniffer-composer-installer": "dev-master",
-        "composer-plugin-api": "^1.1"
+        "composer-plugin-api": "^1.1",
+        "mouf/nodejs-installer": "^1.0"
     },
     "license": "GPL-3.0-or-later",
     "authors": [

@@ -1,0 +1,14 @@
+{
+  "name": "drupal-standards-commands",
+  "version": "1.0.0",
+  "description": "Provides a easy way to check various standards for Drupal projects",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nick Wilde",
+  "license": "GPL-3.0-or-later",
+  "devDependencies": {
+    "stylelint": "^9.5.0"
+  }
+}
