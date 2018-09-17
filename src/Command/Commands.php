@@ -12,6 +12,7 @@ class Commands implements CommandProvider
             new DrupalPhpcsRunner(),
             new DrupalPhpcbfRunner(),
             new DrupalStyleLintRunner(),
+            new DrupalStyleLintFixRunner(),
         ];
     }
 }

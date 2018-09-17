@@ -2,6 +2,7 @@
 
 namespace NickWilde1990\DrupalStandardsCommands\Command;
 
+use Composer\IO\IOInterface;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
@@ -52,7 +53,7 @@ class DrupalStyleLintRunner extends BaseRunner
         $command .= " --config-basedir={$package}";
 
         $io->write("Running {$this->name}");
-        $io->write($command);
+        $io->write($command, true, IOInterface::VERY_VERBOSE);
         exec($command . ' .', $output, $result);
         if ($result) {
             $io->write("{$this->name} found errors:");
