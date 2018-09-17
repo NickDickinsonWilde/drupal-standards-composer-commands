@@ -10,7 +10,8 @@ class Commands implements CommandProvider
     {
         return [
             new DrupalPhpcsRunner(),
-            new DrupalPhpcbfRunner()
+            new DrupalPhpcbfRunner(),
+            new DrupalStyleLintRunner(),
         ];
     }
 }

@@ -15,17 +15,11 @@ use Composer\Script\ScriptEvents;
  */
 class ComposerPlugin implements PluginInterface, Capable, EventSubscriberInterface
 {
-  /**
-   * @var IOInterface
-   */
-  private $io;
-
-  /**
+    /**
      * {@inheritdoc}
      */
     public function activate(Composer $composer, IOInterface $io)
     {
-        $this->io = $io;
     }
 
     /**
@@ -50,7 +44,7 @@ class ComposerPlugin implements PluginInterface, Capable, EventSubscriberInterfa
             ],
             ScriptEvents::POST_UPDATE_CMD => [
                 ['installTestDependencies', 1],
-            ]
+            ],
         ];
     }
 
@@ -59,11 +53,11 @@ class ComposerPlugin implements PluginInterface, Capable, EventSubscriberInterfa
      *
      * @param Event $event
      */
-    public function installTestDependencies(Event $event) {
+    public function installTestDependencies(Event $event)
+    {
         $cd = getcwd();
         chdir('vendor/nickwilde1990/drupal-standards-composer-commands');
         exec("{$cd}/vendor/bin/npm install");
         chdir($cd);
-
     }
 }
