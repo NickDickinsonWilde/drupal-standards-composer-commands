@@ -43,9 +43,21 @@ need to run any command provided by this in your project root (same location as
 your `composer.json`).
 
 ### Available Commands
-* `drupal-phpcs`: Runs PHPCS on your code (checks PHP standards).
+* `drupal-eslint`: Runs Eslint on your code (checks JS standards). Will
+  use default Drupal 8 standards if you do not have a `.eslintrc.json`.
+* `drupal-eslint-fix`: Runs Eslint fix mode on your code (automatically
+  fix JS standards compliance issues). Will use default Drupal 8 standards if
+  you do not have a `.eslintrc.json`.
+* `drupal-phpcs`: Runs PHPCS on your code (checks PHP standards). Will use
+  standard Drupal 8 mode if you do not have a `phpcs.xml` or `phpcs.xml.dist`.
 * `drupal-phpcbf`: Runs PHPCBF on your code (automatically fixes many PHP
-  standards issues).
+  standards issues). Will use standard Drupal 8 mode if you do not have a
+  `phpcs.xml` or `phpcs.xml.dist`.
+* `drupal-stylelint`: Runs Stylelint on your code (checks CSS standards). Will
+  use default Drupal 8 standards if you do not have a `.stylelintrc.json`.
+* `drupal-stylelint-fix`: Runs Stylelint fix mode on your code (automatically
+  fix CSS standards compliance issues). Will use default Drupal 8 standards if
+  you do not have a `.stylelintrc.json`.
 
 ## Known issues
 
