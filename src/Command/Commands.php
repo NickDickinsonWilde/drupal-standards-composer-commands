@@ -14,7 +14,7 @@ class Commands implements CommandProvider
             new DrupalStyleLintRunner(),
             new DrupalStyleLintFixRunner(),
             new DrupalEslintRunner(),
-            new DrupalEslintFixRunnerRunner(),
+            new DrupalEslintFixRunner(),
         ];
     }
 }

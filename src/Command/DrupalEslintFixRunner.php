@@ -5,7 +5,7 @@ namespace NickWilde1990\DrupalStandardsCommands\Command;
 /**
  * Provides a Eslint fix command for use in drupal projects.
  */
-class DrupalEslintFixRunnerRunner extends DrupalEslintRunner
+class DrupalEslintFixRunner extends DrupalEslintRunner
 {
 
     /**
