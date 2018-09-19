@@ -32,6 +32,12 @@ class DrupalStyleLintRunner extends BaseRunner
         $package = 'vendor/nickwilde1990/drupal-standards-composer-commands';
         $command = "{$package}/node_modules/.bin/stylelint {$this->bin} ./*.css";
 
+        if ($paths = $this->getExtra('ignore-paths', null, ['core'])) {
+            foreach ($paths as $path) {
+                $command .= " --ignore-pattern '{$path}'";
+            }
+        }
+
         $result = 0;
         $output = [];
 

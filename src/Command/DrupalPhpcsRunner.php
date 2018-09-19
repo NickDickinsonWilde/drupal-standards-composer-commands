@@ -2,6 +2,7 @@
 
 namespace NickWilde1990\DrupalStandardsCommands\Command;
 
+use Composer\IO\IOInterface;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
@@ -49,10 +50,15 @@ class DrupalPhpcsRunner extends BaseRunner
             $io->write("No PHPCS config file found. Using standard: {$standard}.");
             $command .= " --standard={$standard}";
             $command .= ' --extensions=php,module,inc,install,test,profile,theme,info,txt,md';
-            $command .= ' --ignore=vendor,*/node_modules/*,*/bower_components/*';
+
+            if ($paths = $this->getExtra('ignore-paths', null, ['core'])) {
+                $paths = ',' . implode(',', $paths);
+            }
+            $command .= " --ignore=vendor,*/node_modules/*,*/bower_components/*{$paths}";
         }
 
         $io->write("Running {$this->name}");
+        $io->write("Command: {$command}", true, IOInterface::VERY_VERBOSE);
         exec($command . ' .', $output, $result);
         if ($result) {
             $io->write('PHPCS found errors:');

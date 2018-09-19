@@ -31,7 +31,11 @@ class DrupalEslintRunner extends BaseRunner
         $io = $this->getIO();
         $package = 'vendor/nickwilde1990/drupal-standards-composer-commands';
         $command = "{$package}/node_modules/.bin/eslint {$this->bin}";
-
+        if ($paths = $this->getExtra('ignore-paths', null, ['core'])) {
+            foreach ($paths as $path) {
+                $command .= " --ignore-pattern '/{$path}/'";
+            }
+        }
         $result = 0;
         $output = [];
 

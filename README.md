@@ -11,6 +11,7 @@
 * [Installation](#installation)
 * [Basic Usage](#basic-usage)
 * [Configuration](#configuration)
+* [Known Issues](#known-issues)
 * [Contributing](#contributing)
 * [Licence](#license)
 
@@ -18,7 +19,8 @@
 
 Provides composer commands to check your project according to Drupal Standards.
 Sets up all the requirements for basic standards checks. If you have them, this
-will use `phpcs.xml` and similar to use your customized standards.
+will use `phpcs.xml` and similar depending on the specific tool if available to
+use your customized standards or will use Drupal 8 defaults.
 
 ## Installation
 Install through [Composer](https://getcomposer.io). Due to the status of some of
@@ -43,25 +45,54 @@ need to run any command provided by this in your project root (same location as
 your `composer.json`).
 
 ### Available Commands
-* `drupal-eslint`: Runs Eslint on your code (checks JS standards). Will
-  use default Drupal 8 standards if you do not have a `.eslintrc.json`.
-* `drupal-eslint-fix`: Runs Eslint fix mode on your code (automatically
-  fix JS standards compliance issues). Will use default Drupal 8 standards if
-  you do not have a `.eslintrc.json`.
-* `drupal-phpcs`: Runs PHPCS on your code (checks PHP standards). Will use
-  standard Drupal 8 mode if you do not have a `phpcs.xml` or `phpcs.xml.dist`.
-* `drupal-phpcbf`: Runs PHPCBF on your code (automatically fixes many PHP
-  standards issues). Will use standard Drupal 8 mode if you do not have a
-  `phpcs.xml` or `phpcs.xml.dist`.
-* `drupal-stylelint`: Runs Stylelint on your code (checks CSS standards). Will
-  use default Drupal 8 standards if you do not have a `.stylelintrc.json`.
-* `drupal-stylelint-fix`: Runs Stylelint fix mode on your code (automatically
-  fix CSS standards compliance issues). Will use default Drupal 8 standards if
-  you do not have a `.stylelintrc.json`.
+* `drupal-eslint` [`cs-js-scan`]: Runs Eslint on your code (check JS standards).
+  Will use default Drupal 8 standards if you do not have a `.eslintrc.json`.
+
+* `drupal-eslint-fix` [`cs-js-fix`]: Runs Eslint fix mode on your code
+  (automatically fix JS standards compliance issues). Will use default Drupal 8
+  standards if you do not have a `.eslintrc.json`.
+
+* `drupal-phpcs` [`cs-php-scan`]: Runs PHPCS on your code (check PHP standards).
+  Will use standard Drupal 8 mode if you do not have a `phpcs.xml` or
+  `phpcs.xml.dist`.
+
+* `drupal-phpcbf` [`cs-php-fix`]: Runs PHPCBF on your code (automatically fix
+  many PHP standards complaince issues). Will use standard Drupal 8 mode if you
+  do not have a `phpcs.xml` or `phpcs.xml.dist`.
+
+* `drupal-stylelint` [`cs-css-scan`]: Runs Stylelint on your code (check CSS
+  standards). Will use default Drupal 8 standards if you do not have a
+  `.stylelintrc.json`.
+
+* `drupal-stylelint-fix` [`cs-css-fix`]: Runs Stylelint fix mode on your code
+  (automatically fix CSS standards compliance issues). Will use default Drupal 8
+  standards if you do not have a `.stylelintrc.json`.
+
+## Configuration
+
+Some custom configuration can be provided in your package's `composer.json` in
+the `extra` key under `drupal-standards-commands`. Specifically:
+
+* `ignore-paths`: Provide an array of extra paths for tools to ignore (affects
+  all scan/fix tools).
+  Default: `["core"]`
+  Example:
+  ```json
+  {
+    "extra": {
+      "drupal-standards-commands": {
+        "ignore-paths": [
+          "core",
+          "tests"
+        ]
+      }
+    }
+  }
+  ```
 
 ## Known issues
 
-[See open bug reports in the issue queue.](https://github.com/NickWilde1990/drupal-standards-composer-commands/issues)
+See open bug reports in the [issue queue](https://github.com/NickWilde1990/drupal-standards-composer-commands/issues)
 
 ## Contribution
 
