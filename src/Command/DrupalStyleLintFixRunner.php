@@ -17,6 +17,7 @@ class DrupalStyleLintFixRunner extends DrupalStyleLintRunner
     public function configure()
     {
         $this->setName('drupal-stylelint-fix');
+        $this->setAliases(['cs-css-fix']);
         $this->setDescription('Automatically fix CSS standards compliance issues with stylelint.');
         $this->name = 'Stylelint Fix Mode';
         $this->bin = ' --fix';

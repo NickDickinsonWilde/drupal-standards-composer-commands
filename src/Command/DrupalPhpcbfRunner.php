@@ -13,6 +13,7 @@ class DrupalPhpcbfRunner extends DrupalPhpcsRunner
     public function configure()
     {
         $this->setName('drupal-phpcbf');
+        $this->setAliases(['cs-php-fix']);
         $this->setDescription('Automatically fix PHP standards compliance issues with PHPCBF.');
         $this->bin = 'vendor/bin/phpcbf';
         $this->name = 'PHPCBF';

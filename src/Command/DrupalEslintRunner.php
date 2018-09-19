@@ -18,6 +18,7 @@ class DrupalEslintRunner extends BaseRunner
     public function configure()
     {
         $this->setName('drupal-eslint');
+        $this->setAliases(['cs-js-scan']);
         $this->setDescription('Scan for JS standards compliance with Eslint.');
         $this->name = 'Eslint';
     }

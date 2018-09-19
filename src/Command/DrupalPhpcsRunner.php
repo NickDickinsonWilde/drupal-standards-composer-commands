@@ -17,6 +17,7 @@ class DrupalPhpcsRunner extends BaseRunner
     public function configure()
     {
         $this->setName('drupal-phpcs');
+        $this->setAliases(['cs-php-scan']);
         $this->setDescription('Scan for PHP Standard errors.');
         $this->bin = 'vendor/bin/phpcs';
         $this->name= 'PHPCS';

@@ -14,6 +14,7 @@ class DrupalEslintFixRunner extends DrupalEslintRunner
     public function configure()
     {
         $this->setName('drupal-eslint-fix');
+      $this->setAliases(['cs-js-fix']);
         $this->setDescription('Automatically fix JS standards compliance issues with Eslint.');
         $this->name = 'Eslint Fix Mode';
         $this->bin = '--fix';

@@ -18,6 +18,7 @@ class DrupalStyleLintRunner extends BaseRunner
     public function configure()
     {
         $this->setName('drupal-stylelint');
+        $this->setAliases(['cs-css-scan']);
         $this->setDescription('Scan for CSS standards compliance with stylelint.');
         $this->name = 'Stylelint';
     }
